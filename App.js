@@ -1,6 +1,11 @@
 import React from "react";
-import MessagesScreen from "./screens/MessagesScreen";
+import FormControl from "./components/FormControl";
+import Screen from "./layouts/Screen";
 
 export default function App() {
-    return <MessagesScreen />;
+    return (
+        <Screen>
+            <FormControl />
+        </Screen>
+    );
 }
