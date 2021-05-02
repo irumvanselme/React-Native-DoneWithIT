@@ -1,23 +1,28 @@
 import React from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import Swipeable from "react-native-gesture-handler/Swipeable";
 
-function ListItem({ image, title, subTitle }) {
+function ListItem({ image, title, subTitle, onPress, renderRightActions }) {
     return (
-        <View style={styles.container}>
-            <View>
-                <Image source={image} style={styles.image} />
-            </View>
-            <View style={{ paddingLeft: 20 }}>
-                <Text>{title}</Text>
-                <Text>{subTitle}</Text>
-            </View>
-        </View>
+        <Swipeable renderRightActions={renderRightActions}>
+            <TouchableOpacity onPress={onPress}>
+                <View style={styles.container}>
+                    <View>
+                        <Image source={image} style={styles.image} />
+                    </View>
+                    <View style={{ paddingLeft: 20 }}>
+                        <Text>{title}</Text>
+                        <Text>{subTitle}</Text>
+                    </View>
+                </View>
+            </TouchableOpacity>
+        </Swipeable>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        paddingHorizontal: 20,
+        padding: 10,
         display: "flex",
         flexDirection: "row",
     },
