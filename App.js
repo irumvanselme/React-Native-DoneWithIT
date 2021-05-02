@@ -1,21 +1,13 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View, StatusBar as TopBar } from "react-native";
-import ViewImageScreen from "./screens/ViewImageScreen";
+import { Text, View } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import AppButton from "./components/AppButton";
 import WelcomeScreen from "./screens/WelcomeScreen";
 
 export default function App() {
     return (
-        <View style={styles.container}>
-            <ViewImageScreen />
+        <View style={{ flex: 1 }}>
+            <WelcomeScreen />
         </View>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        backgroundColor: "white",
-        flex: 1,
-        paddingTop: TopBar.currentHeight,
-    },
-});
