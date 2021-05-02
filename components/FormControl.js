@@ -1,13 +1,29 @@
 import React from "react";
-import { StyleSheet, TextInput, View } from "react-native";
+import { StyleSheet, TextInput, View, Text } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-function FormControl(props) {
+function FormControl({ icon, placeholder, errors, ...props }) {
     return (
-        <View style={styles.container}>
-            <MaterialCommunityIcons name="email" color="gray" size={25} />
-            <TextInput placeholder="Enter a text" style={styles.input} />
-        </View>
+        <>
+            <View style={styles.container}>
+                <MaterialCommunityIcons name={icon} color="gray" size={25} />
+                <TextInput
+                    placeholder={placeholder}
+                    style={styles.input}
+                    {...props}
+                />
+            </View>
+            <Text
+                style={{
+                    color: "red",
+                    paddingLeft: 20,
+                    paddingTop: 2,
+                    paddingBottom: 12,
+                }}
+            >
+                {errors}
+            </Text>
+        </>
     );
 }
 
@@ -24,6 +40,7 @@ const styles = StyleSheet.create({
     input: {
         marginLeft: 15,
         fontSize: 16,
+        flex: 1,
     },
 });
 

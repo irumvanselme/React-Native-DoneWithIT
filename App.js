@@ -1,12 +1,6 @@
-import React, { useState } from "react";
-import AppPicker from "./components/AppPicker";
-import Screen from "./layouts/Screen";
+import React from "react";
+import LoginScreen from "./screens/auth/LoginScreen";
 
 export default function App() {
-    const [value, setValue] = useState(false);
-    return (
-        <Screen>
-            <AppPicker />
-        </Screen>
-    );
+    return <LoginScreen />;
 }
